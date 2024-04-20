@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prank Website</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var robot = document.getElementById("robot").checked;
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            if (age < 18) {
+                alert("You must be 18 or older to proceed.");
+                return false;
+            }
+
+            if (!robot) {
+                alert("Please confirm that you are not a robot.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Prank Website!</h1>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <input type="checkbox" id="robot" name="robot">
+        <label for="robot">I am not a robot</label><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>By clicking submit, you agree to be redirected to the Rickroll video.</p>
+</body>
+</html>
